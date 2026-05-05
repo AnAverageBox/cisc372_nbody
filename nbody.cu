@@ -76,8 +76,11 @@ void randomFill(int start, int count)
     int i, j;
     for (i = start; i < start + count; i++) {
         for (j = 0; j < 3; j++) {
-            hVel[i][j] = (double)rand() / RAND_MAX * MAX_DISTANCE * 2 - MAX_DISTANCE;
-            hPos[i][j] = (double)rand() / RAND_MAX * MAX_VELOCITY * 2 - MAX_VELOCITY;
+            //hVel[i][j] = (double)rand() / RAND_MAX * MAX_DISTANCE * 2 - MAX_DISTANCE;
+            //hPos[i][j] = (double)rand() / RAND_MAX * MAX_VELOCITY * 2 - MAX_VELOCITY;
+            //prevents the number from going crazy high in the output
+            hVel[i][j] = (double)rand() / RAND_MAX * MAX_VELOCITY * 2 - MAX_VELOCITY;
+            hPos[i][j] = (double)rand() / RAND_MAX * MAX_DISTANCE * 2 - MAX_DISTANCE;
             mass[i]    = (double)rand() / RAND_MAX * MAX_MASS;
         }
     }
